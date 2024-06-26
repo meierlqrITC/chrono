@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.ki-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.ki-popup-content {
+    text-align: center;
+}
+
+.ki-popup-content p {
+    margin: 10px 0;
+    white-space: normal;
+}
+
+.ki-popup-content .btn-accept, .ki-popup-content .btn-reject {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.ki-popup-content .btn-accept {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.ki-popup-content .btn-reject {
+    background-color: #f44336;
+    color: white;
+}

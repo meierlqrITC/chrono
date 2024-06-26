@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+# If running the rails server then create or migrate existing database
+if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
+  ./bin/rails db:prepare
+
+  # Seed the database if it is not already seeded
+  if ! ./bin/rails db:seed:replant --dry-run 2>&1 | grep -q 'Seed data'; then
+    ./bin/rails db:seed
+  fi
+fi
+
+exec "${@}"

@@ -1,0 +1,2 @@
+module FehlzeitsHelper
+end

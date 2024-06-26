@@ -1,0 +1,21 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% content_for :title, "Moduls" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Module</h1>
+    <%= link_to "Neues Modul", new_modul_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="moduls" class="min-w-full">
+    <% @moduls.each do |modul| %>
+      <%= render modul %>
+      <p>
+        <%= link_to "Modul anzeigen", modul, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      </p>
+    <% end %>
+  </div>
+</div>

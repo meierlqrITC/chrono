@@ -1,0 +1,2 @@
+module RestrictedClearHelper
+end

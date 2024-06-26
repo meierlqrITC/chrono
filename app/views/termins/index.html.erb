@@ -1,0 +1,33 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% content_for :title, "Termine" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Termine</h1>
+    <%= link_to "Neuer Termin", new_termin_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <table id="termins" class="min-w-full border-collapse">
+    <thead>
+    <tr>
+      <th class="border px-4 py-2">Termin-Details</th>
+      <th class="border px-4 py-2">Aktionen</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @termins.each do |termin| %>
+      <tr>
+        <td class="border px-4 py-2">
+          <%= render termin %>
+        </td>
+        <td class="border px-4 py-2">
+          <%= link_to "Termin anzeigen", termin, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,2 @@
+module AnwesenheitslistesHelper
+end

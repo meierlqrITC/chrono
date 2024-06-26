@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bezeichnung: MyString
+  beginn: 2024-06-25 23:23:46
+  ende: 2024-06-25 23:23:46
+  beschreibung: MyText
+  veranstaltung: one
+
+two:
+  bezeichnung: MyString
+  beginn: 2024-06-25 23:23:46
+  ende: 2024-06-25 23:23:46
+  beschreibung: MyText
+  veranstaltung: two

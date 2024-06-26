@@ -1,0 +1,42 @@
+<%= form_with(model: termin, local: true, data: { controller: "termin" }, class: "contents") do |form| %>
+  <% if termin.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(termin.errors.count, "error") %> prohibited this termin from being saved:</h2>
+
+      <ul>
+        <% termin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :bezeichnung %>
+    <%= form.text_field :bezeichnung, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :beginn %>
+    <%= form.datetime_local_field :beginn, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", data: { termin_target: "beginn" } %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :ende %>
+    <%= form.datetime_local_field :ende, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", data: { termin_target: "ende" } %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :beschreibung %>
+    <%= form.text_area :beschreibung, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :veranstaltung_id %>
+    <%= form.collection_select :veranstaltung_id, @veranstaltungen, :id, :name, { prompt: "Bitte auswählen" }, { class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" } %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit "Speichern", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

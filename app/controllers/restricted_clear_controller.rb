@@ -1,0 +1,2 @@
+class RestrictedClearController < ApplicationController
+end

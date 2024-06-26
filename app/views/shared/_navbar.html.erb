@@ -1,0 +1,20 @@
+<nav class="bg-white dark:bg-gray-900 sticky w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 flex justify-between">
+  <div>
+    <!-- Suchfeld -->
+
+  </div>
+  <div class="bg-gray-300">
+    <!--Menüknopf -->
+    <%= link_to "Termine", termins_path %> |
+    <%= link_to "Module", moduls_path %> |
+    <%= link_to "Veranstaltungen", veranstaltungs_path %> |
+    <%= link_to "Fehlzeiten", fehlzeits_path %>
+  </div>
+  <div class="bg-red-300">
+    <!-- Accountknopf -->
+    Hallo, <%= current_user.email %>
+    <% if user_signed_in? %>
+      <%= button_to 'Abmelden', destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+</nav>
